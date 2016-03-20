@@ -1,7 +1,7 @@
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
 {
 	background:none ;
-	color:grey;
+	color:#337ab7;
 }
 
 a{
