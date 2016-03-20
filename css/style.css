@@ -8,8 +8,9 @@ a{
 	color:black;
 }
 
-.nav-shadow
+nav.navbar.nav-shadow
 {
 	background:white;
 	box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+	border-radius: 0;
 }
