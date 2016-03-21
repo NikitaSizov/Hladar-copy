@@ -3,6 +3,7 @@
 	background:url(../images/back-sertificates.jpg);
 	background-size: 100%;
 	padding: 40px;
+	background-size: cover;
 }
 
 .back-sertificates .btn

@@ -24,3 +24,8 @@ section{
 body{
 	overflow-x: hidden;
 }
+
+.nav
+{
+	margin-right: 20px;
+}
