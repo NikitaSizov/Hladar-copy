@@ -8,8 +8,10 @@
 #main-photo{
 	height: 600px;
 	width:100%;
-	background: #ddd;
-	box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+	box-shadow: 0 0px 2px 2px rgba(0, 0, 0, 0.5);
+	display:block;
+	position:relative;
+	z-index:1;
 }
 #main-photo .container{
 	display: -webkit-flexbox;
