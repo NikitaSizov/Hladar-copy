@@ -1,0 +1,20 @@
+.back-what-we-make
+{
+	background:#dfdfdf;
+}
+
+.back-what-we-make ul
+{
+	list-style-image: url(../images/check.png);
+}
+
+.back-what-we-make li
+{
+	cursor:pointer;
+}
+
+.back-what-we-make li:hover
+{
+	background:#4F4F4F;
+	color:white;
+}
