@@ -1,0 +1,23 @@
+.grey-background
+{
+	background:#dfdfdf;
+}
+
+.grey-background h2
+{
+	color:#337ab7;
+}
+
+.grey-background .btn
+{
+	background:#337ab7;
+	color:white;
+	transition:0.5s;
+}
+
+.grey-background .btn:hover
+{
+	background:none;
+	color:black;
+	border:1px solid #337ab7;
+}
