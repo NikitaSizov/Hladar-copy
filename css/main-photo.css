@@ -1,8 +1,15 @@
+#main-photo .image-container{
+	background:url(../images/main-photo.jpg);
+	background-size: cover;
+	-webkit-transition: background-image 0.5s ease-in-out;
+	transition: background-image 0.5s ease-in-out;
+	height: calc(100% - 50px);
+}
 #main-photo{
 	height: 600px;
 	width:100%;
-	background:url(../images/main-photo.jpg);
-	background-size: cover;
+	background: #ddd;
+	box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
 }
 #main-photo .container{
 	display: -webkit-flexbox;
@@ -26,4 +33,28 @@
 #main-photo p{
 	color: #ddd;
 	text-align:center;
+}
+#main-photo .images{
+	display:none;
+}
+#main-photo .checkboxes span{
+    display:inline-block;
+    text-indent: -1000em;
+	width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    outline: 0;
+	border-radius: 5px;
+	background-color: white;
+	font-size: 10px;
+}
+#main-photo .checkboxes span.active{
+	background-color: black;
+}
+#main-photo .checkboxes-container{
+	margin-top:20px;
+	text-align: center;
+}
+#main-photo .checkboxes{
+	display: inline;
 }
