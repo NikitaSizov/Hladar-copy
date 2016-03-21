@@ -1,0 +1,33 @@
+.back-sertificates
+{
+	background:url(../images/back-sertificates.jpg);
+	background-size: 100%;
+	padding: 40px;
+}
+
+.back-sertificates .btn
+{
+	background: gold;
+	border:3px solid gold;
+	transition:0.5s;
+}
+.back-sertificates h1
+{
+	color:white;
+}
+.back-sertificates h4
+{
+	color:white;
+}
+
+.back-sertificates .btn:hover
+{
+	background:none;
+	border:3px solid gold;
+}
+
+
+.padding-sert
+{
+	padding:30px;
+}
