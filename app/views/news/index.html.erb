@@ -1,0 +1,22 @@
+<section id="card">
+	<div class="row card-back">
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-12"><h1>Новости</h1></div>
+			<% @news.each do |item| %>
+			<div class="col-lg-4">
+				<div class="thumbnail">
+			      	<%= image_tag "/images/"+item.img %>
+			        <div class="caption">
+				        <h3><%= item.name %></h3>
+				        <p><%= truncate(item.desc, length: 150) %></p>
+				        <p><a href="#" id="<%= item.id %>" class="btn btn-primary modal-trigger" role="button" data-toggle="modal" data-target="#ModalWindow">Подробнее</a></p>
+		  	    	</div>
+		    	</div>
+			</div>
+			<% end %>
+		</div>
+		</div>
+	</div>
+</section>
+<%= render 'layouts/menu_modal'%>

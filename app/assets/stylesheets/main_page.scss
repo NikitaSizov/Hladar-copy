@@ -1,0 +1,162 @@
+// Place all the styles related to the MainPage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.back-what-we-make ul
+{
+	list-style-image: image-url("check.png");
+}
+
+.back-what-we-make li
+{
+	cursor:pointer;
+}
+
+#what-we-make .production li a:hover
+{
+	color: #444;
+}
+#what-we-make .production li a{
+    display: block;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    text-decoration: none;
+}
+#what-we-make{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.back-sertificates
+{
+	background:url(../images/back-sertificates.jpg);
+	background-size: 100%;
+	padding: 40px;
+	background-size: cover;
+}
+
+.back-sertificates .btn
+{
+	background: gold;
+	border:3px solid gold;
+	transition:0.5s;
+}
+.back-sertificates h1
+{
+	color:white;
+}
+.back-sertificates h4
+{
+	color:white;
+}
+
+.back-sertificates .btn:hover
+{
+	background:none;
+	border:3px solid gold;
+}
+
+
+.padding-sert
+{
+	padding:30px;
+}
+.grey-background
+{
+	background:#dfdfdf;
+}
+
+.grey-background h2
+{
+	color:#337ab7;
+}
+
+.grey-background .btn
+{
+	background:#337ab7;
+	color:white;
+	transition:0.5s;
+}
+
+.grey-background .btn:hover
+{
+	background:none;
+	color:black;
+	border:1px solid #337ab7;
+}
+#main-prod{
+	padding-top: 15px;
+	padding-bottom: 30px;
+}
+#main-photo .image-container{
+	background-size: cover;
+	-webkit-transition: background-image 0.5s ease-in-out;
+	transition: background-image 0.5s ease-in-out;
+	height: calc(100% - 50px);
+}
+#main-photo{
+	height: 600px;
+	width:100%;
+	box-shadow: 0 0px 2px 2px rgba(0, 0, 0, 0.5);
+	display:block;
+	position:relative;
+	z-index:1;
+}
+#main-photo .container{
+	display: -webkit-flexbox;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	text-align: center;
+	height: 100%;
+}
+#main-photo .container .wrapper{
+	width:100%;
+}
+#main-photo h1{
+	color:white;
+	text-align: center;
+}
+#main-photo p{
+	color: #ddd;
+	text-align:center;
+}
+#main-photo .images{
+	display:none;
+}
+#main-photo .checkboxes span{
+    display:inline-block;
+    text-indent: -1000em;
+	width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    outline: 0;
+	border-radius: 5px;
+	background-color: white;
+	font-size: 10px;
+}
+#main-photo .checkboxes span.active{
+	background-color: black;
+}
+#main-photo .checkboxes-container{
+	margin-top:20px;
+	text-align: center;
+}
+#main-photo .checkboxes{
+	display: inline;
+}
+.card-back
+{
+	background: #f0f0f0
+}
+.card-back h1
+{
+	color:#337ab7;
+	padding-left: 15px;
+}

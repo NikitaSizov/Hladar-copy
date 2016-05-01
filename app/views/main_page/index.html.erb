@@ -1,0 +1,193 @@
+<section id="main-photo">
+	<div class="image-container">
+		<div class="container">
+			<div class="wrapper">
+				<h1>Огнетушители и пожарное оборудование</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. </p>
+			</div>
+		</div>
+	</div>
+	<div class="checkboxes-container">
+		<div class="checkboxes">
+		</div>
+	</div>
+	<div class="images">
+		<a href="./images/main-photo1.jpg"></a>
+		<a href="./images/main-photo2.jpg"></a>
+		<a href="./images/main-photo3.jpg"></a>
+	</div>
+</section>
+
+<section id="main-prod">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 text-center">
+				<p>
+					<div class="my-ico">
+						<img src="images/black.png">
+					</div>
+				</p>
+				<p>
+					<h2>Порошковые огентушители</h2>
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+				</p>
+				<p>
+					<button type="button" class="btn btn-default"><h4>Подробнее</h4></button>
+				</p>
+			</div>
+			<div class="col-lg-4 text-center">
+				<p>
+					<div class="my-ico">
+						<img src="images/tool.png">
+					</div>
+				</p>
+				<p>
+					<h2>Углекислотные огнтушители</h2>
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+				</p>
+				<p>
+					<button type="button" class="btn btn-default"><h4>Подробнее</h4></button>
+				</p>
+			</div>
+			<div class="col-lg-4 text-center">
+				<p>
+					<div class="my-ico">
+						<img src="images/fire.png">
+					</div>
+				</p>
+				<p>
+					<h2>Пожарное<br>оборудование</h2>
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+				</p>
+				<p>
+					<button type="button" class="btn btn-default"><h4>Подробнее</h4></button>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="sertificates">
+	<div class="row back-sertificates text-center">
+		<h1 class="padding-sert">Наши сертификаты</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+
+				</div>
+				<div class="col-lg-6">
+	      	<div id="carousel-generic" class="carousel slide" data-ride="carousel">
+	          <!-- Indicators -->
+	          <ol class="carousel-indicators">
+							<% 11.times do |i| %>
+	            <li data-target="#carousel-generic"
+								data-slide-to="<%= i+1 %>"<% if i==0 then %> class="active" <%end%>>
+							</li>
+							<% end %>
+						</ol>
+
+	          <!-- Wrapper for slides -->
+	          <div class="carousel-inner">
+							<% 11.times do |i| %>
+	            <div class="item <% if i==0 then %> active <%end%>">
+	            	<div class="not-copy-my-sertificates-bitch"></div>
+	              <img src="images/<%= i+1 %>.png" alt="...">
+	              <div class="carousel-caption">
+	              </div>
+	            </div>
+							<% end %>
+	          </div>
+
+	          <!-- Controls -->
+	          <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+	            <span class="glyphicon glyphicon-chevron-left"></span>
+	          </a>
+	          <a class="right carousel-control" href="#carousel-generic" data-slide="next">
+	            <span class="glyphicon glyphicon-chevron-right"></span>
+	          </a>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</section>
+
+<section id="what-we-make">
+	<div class="container">
+		<div class="row back-what-we-make">
+			<div class="col-lg-8">
+				<h1>Про нас</h1>
+				<p>
+					<br>
+					<b>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+					</b>
+				</p>
+				<p>
+					<br>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+				</p>
+			</div>
+			<div class="col-lg-4 production">
+				<h1>Наша продукция</h1>
+				<ul>
+					<% @aboutMenu.each do |category| %>
+						<% if category[0].prod_category_id > 1 then%>
+						<li>
+							<a data-toggle="collapse" data-target="#cat_<%= category[0].prod_category_id %>">
+								<b><%= category[0].prod_category.name %></b>
+							</a>
+							<ul id="cat_<%= category[0].prod_category_id %>" class="collapse">
+							<% category.each do |item| %>
+								<li><%= link_to item.product.name, "#" %></li>
+							<% end %>
+							</ul>
+						</li>
+						<% else %>
+							<% category.each do |item| %>
+								<li><%= link_to item.product.name, "#" %></li>
+							<% end %>
+						<% end %>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="card">
+	<div class="row card-back">
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-12"><h1>Новости</h1></div>
+			<% @news.each do |item| %>
+			<div class="col-lg-4">
+				<div class="thumbnail">
+							<%= image_tag "/images/"+item.img %>
+							<div class="caption">
+								<h3><%= item.name %></h3>
+								<p><%= truncate(item.desc, length: 150) %></p>
+								<p>
+									<a href="#" id="<%= item.id %>"
+										class="btn btn-primary modal-trigger"
+										role="button" data-toggle="modal" data-target="#ModalWindow">
+											Подробнее
+									</a>
+								</p>
+							</div>
+					</div>
+			</div>
+			<% end %>
+		</div>
+		</div>
+	</div>
+</section>
+<%= render 'layouts/menu_modal'%>
