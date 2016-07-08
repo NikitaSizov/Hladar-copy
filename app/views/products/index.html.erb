@@ -1,0 +1,47 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>Img</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Props</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.desc %></td>
+        <td class="media"><div class="media-left"><%= image_tag product.img, class: "media-object" %></div></td>
+        <td><%= product.price %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.props %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<style>
+  .media .media-left img.media-object{
+    width:64px;
+    height:64px;
+  }
+  tr td, th{
+    padding: 5px;
+  }
+</style>
+<br>
+
+<%= link_to 'New Product', new_product_path %>
+</div>

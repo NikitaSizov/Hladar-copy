@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   get '/news', to: "news#index"
   get '/news/:id.json', to: 'news#show' 
   root 'main_page#index'

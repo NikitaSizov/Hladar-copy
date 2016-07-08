@@ -147,13 +147,13 @@
 							</a>
 							<ul id="cat_<%= category[0].prod_category_id %>" class="collapse">
 							<% category.each do |item| %>
-								<li><%= link_to item.product.name, "#" %></li>
+								<li><%= link_to item.product.name, item.product %></li>
 							<% end %>
 							</ul>
 						</li>
 						<% else %>
 							<% category.each do |item| %>
-								<li><%= link_to item.product.name, "#" %></li>
+								<li><%= link_to item.product.name, item.product %></li>
 							<% end %>
 						<% end %>
 					<% end %>

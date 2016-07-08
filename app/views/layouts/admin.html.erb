@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Hladar</title>
-		<%= stylesheet_link_tag    'application',params[:controller] %>
-		<%= javascript_include_tag 'application', params[:controller] %>
+		<%= stylesheet_link_tag    'admin', media: 'all' %>
+		<%= javascript_include_tag 'admin', params[:controller] %>
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -17,10 +17,9 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-right" id="nav-content">
 				<ul class="nav navbar-nav">
-					<li role="presentation" class="active"><%= link_to "Главная", :root%></li>
-					<li role="presentation"><%= link_to "Продукция", :products%></li>
-					<li role="presentation"><a href="/#what-we-make">О нас</a></li>
-					<li role="presentation"><a href="#">Контакты</a></li>
+					<li role="presentation" class="active"><a href="#">Главная</a></li>
+					<li role="presentation"><a href="#">Продукция</a></li>
+					<li role="presentation"><a href="#">Статистика</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</nav>
