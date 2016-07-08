@@ -1,0 +1,29 @@
+.back-what-we-make ul
+{
+	list-style-image: url(../images/check.png);
+}
+
+.back-what-we-make li
+{
+	cursor:pointer;
+}
+
+#what-we-make .production li a:hover
+{
+	color: #444;
+}
+#what-we-make .production li a{
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    text-decoration: none;
+}
+#what-we-make{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
