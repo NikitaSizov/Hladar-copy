@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   resources :products
   get '/news', to: "news#index"
-  get '/news/:id.json', to: 'news#show' 
+  get '/news/:id.json', to: 'news#show'
   root 'main_page#index'
   get '/smth', to: 'main_page#smth'
+
+  namespace :admin do
+    root 'admin#admin'
+    get '/login', to: 'session#login', as: :login
+    post '/auth', to: 'session#auth', as: :auth
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

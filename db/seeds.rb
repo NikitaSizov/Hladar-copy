@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-=begin
+
 ProdCategory.create(id:0, name:"")
 ProdCategory.create(name: "Огнетушители порошковые")
 ProdCategory.create(name: "Огнетушители углекислотные")
@@ -48,4 +48,3 @@ News.create name:"Новость1", desc:"Lorem ipsum dolor sit amet, consectetu
 News.create name:"Новость2", desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet, justo eu condimentum mattis, urna urna elementum ex, in mollis ante urna eget tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam ut commodo est, ut posuere neque. Maecenas mollis viverra lacus, non rutrum leo cursus convallis. Nunc ac malesuada quam. Mauris ultricies turpis nec tellus pretium ultrices. Sed sed ligula et felis semper vulputate. Etiam et pharetra orci.", img: "news2.jpg"
 News.create name:"Новость3", desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet, justo eu condimentum mattis, urna urna elementum ex, in mollis ante urna eget tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam ut commodo est, ut posuere neque. Maecenas mollis viverra lacus, non rutrum leo cursus convallis. Nunc ac malesuada quam. Mauris ultricies turpis nec tellus pretium ultrices. Sed sed ligula et felis semper vulputate. Etiam et pharetra orci.", img: "news3.jpg"
 News.create name:"Новость4", desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet, justo eu condimentum mattis, urna urna elementum ex, in mollis ante urna eget tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam ut commodo est, ut posuere neque. Maecenas mollis viverra lacus, non rutrum leo cursus convallis. Nunc ac malesuada quam. Mauris ultricies turpis nec tellus pretium ultrices. Sed sed ligula et felis semper vulputate. Etiam et pharetra orci.", img: "main-photo.jpg"
-=end
