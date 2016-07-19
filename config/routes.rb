@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  resources :news
   root 'main_page#index'
   resources :products, only: [:show, :index]
   get '/news', to: "news#index"
   get '/news/:id', to: 'news#show'
   get '/smth', to: 'main_page#smth'
-  resources :products, path: '/admin/products'
+  scope :as => "admin" do
+    resources :products, path: '/admin/products'
+    resources :news, path: '/admin/news'
+  end
   namespace :admin do
     root 'admin#admin'
     #resources :products, controller: 'products'

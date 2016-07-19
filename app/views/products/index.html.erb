@@ -25,10 +25,10 @@
         <td><%= product.price %></td>
         <td><%= product.quantity %></td>
         <td><%= product.props %></td>
-        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Show', admin_product_path(product) %></td>
         <% if admin? then %>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
+        <td><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -45,6 +45,6 @@
 </style>
 <br>
 <% if admin? then %>
-  <%= link_to 'New Product', new_product_path %>
+  <%= link_to 'New Product', new_admin_product_path %>
 <% end %>
 </div>

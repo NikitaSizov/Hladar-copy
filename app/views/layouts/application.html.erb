@@ -17,10 +17,9 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-right" id="nav-content">
 				<ul class="nav navbar-nav">
-					<li role="presentation" class="active"><%= link_to "Главная", :root%></li>
-					<li role="presentation"><%= link_to "Продукция", :products%></li>
-					<li role="presentation"><a href="/#what-we-make">О нас</a></li>
-					<li role="presentation"><a href="#">Контакты</a></li>
+					<% @nav.each do |e| %>
+						<li role="presentation" class="active"><%= link_to e[:name], e[:link]%></li>
+					<% end %>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</nav>

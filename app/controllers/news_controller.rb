@@ -6,4 +6,7 @@ class NewsController < ApplicationController
   	@novelty = News.find(params[:id])
   	render json:@novelty
   end
+  def edit
+    @news = News.find(params[:id])
+  end
 end
