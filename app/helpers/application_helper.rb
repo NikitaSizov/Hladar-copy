@@ -1,5 +1,9 @@
 module ApplicationHelper
   def admin?
-    params[:controller].split("::").first=="Admin" || session[:authed] == 1
+    #Rails.logger.debug request.original_fullpath.split("/")[1]
+    request.original_fullpath.split("/")[1]=="admin"
+  end
+  def authed?
+    session[:authed] == 1
   end
 end

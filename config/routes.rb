@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  resources :products
-  get '/news', to: "news#index"
-  get '/news/:id.json', to: 'news#show'
   root 'main_page#index'
+  resources :products, only: [:show, :index]
+  get '/news', to: "news#index"
+  get '/news/:id', to: 'news#show'
   get '/smth', to: 'main_page#smth'
-
+  resources :products, path: '/admin/products'
   namespace :admin do
     root 'admin#admin'
+    #resources :products, controller: 'products'
     get '/login', to: 'session#login', as: :login
     post '/auth', to: 'session#auth', as: :auth
   end

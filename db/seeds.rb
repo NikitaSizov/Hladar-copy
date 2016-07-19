@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 ProdCategory.create(id:0, name:"")
 ProdCategory.create(name: "Огнетушители порошковые")
 ProdCategory.create(name: "Огнетушители углекислотные")
