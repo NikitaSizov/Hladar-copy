@@ -1,10 +1,10 @@
-<%= form_for([:admin, @admin_sertificate]) do |f| %>
-  <% if @admin_sertificate.errors.any? %>
+<%= form_for([:admin, @sertificate]) do |f| %>
+  <% if @sertificate.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@admin_sertificate.errors.count, "error") %> prohibited this admin_sertificate from being saved:</h2>
+      <h2><%= pluralize(@sertificate.errors.count, "error") %> prohibited this admin_sertificate from being saved:</h2>
 
       <ul>
-      <% @admin_sertificate.errors.full_messages.each do |message| %>
+      <% @sertificate.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -22,4 +22,23 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <%= image_tag %>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 <% end %>

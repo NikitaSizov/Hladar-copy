@@ -1,1 +1,1 @@
-json.extract! @admin_sertificate, :id, :name, :image, :created_at, :updated_at
+json.extract! @sertificate, :id, :name, :image, :created_at, :updated_at
