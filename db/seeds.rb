@@ -23,11 +23,11 @@ Product.create(name: "ОУ-3", desc: "Some description", img:"main-photo.jpg", p
 Product.create(name: "ОУ-5", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:3)
 Product.create(name: "ОУ-7", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:3)
 
-Product.create(name: "Шкафы, щиты пожарные", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:0)
-Product.create(name: "Краны пожарные", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:0)
-Product.create(name: "Рукава пожарные", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:0)
-Product.create(name: "Компдектующие к огнетушителям", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:0)
-Product.create(name: "Кронштейны", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:0)
+Product.create(name: "Шкафы, щиты пожарные", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:4)
+Product.create(name: "Краны пожарные", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:4)
+Product.create(name: "Рукава пожарные", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:4)
+Product.create(name: "Компдектующие к огнетушителям", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:4)
+Product.create(name: "Кронштейны", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:4)
 
 
 AboutMenu.create product_id:1, prod_category_id:2, order:1

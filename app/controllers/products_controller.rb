@@ -4,12 +4,14 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @categories = ProdCategory.all
+    @product = Product.first
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    render layout: false if params[:no_layout]
   end
 
   # GET /products/new
