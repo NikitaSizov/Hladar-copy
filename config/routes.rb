@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :news
   root 'main_page#index'
   resources :products, only: [:show, :index]
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     #resources :products, controller: 'products'
     get '/login', to: 'session#login', as: :login
     post '/auth', to: 'session#auth', as: :auth
+    resources :sertificates
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

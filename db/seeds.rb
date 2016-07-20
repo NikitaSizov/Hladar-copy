@@ -12,11 +12,11 @@ ProdCategory.create(name: "Огнетушители углекислотные")
 ProdCategory.create(name: "Пожарный инвентарь")
 
 Product.create(name: "ОП-1(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
-Product.create(name: "ОП-1(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
-Product.create(name: "ОП-1(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
-Product.create(name: "ОП-1(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
-Product.create(name: "ОП-1(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
-Product.create(name: "ОП-1(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
+Product.create(name: "ОП-2(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
+Product.create(name: "ОП-3(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
+Product.create(name: "ОП-5(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
+Product.create(name: "ОП-8(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
+Product.create(name: "ОП-9(з)", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:2)
 
 Product.create(name: "ОУ-2", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:3)
 Product.create(name: "ОУ-3", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:3)
@@ -29,6 +29,17 @@ Product.create(name: "Рукава пожарные", desc: "Some description", 
 Product.create(name: "Компдектующие к огнетушителям", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:4)
 Product.create(name: "Кронштейны", desc: "Some description", img:"main-photo.jpg", price: 10, quantity: 100, props:"some properties", prod_category_id:4)
 
+Sertificate.create name:"1", image: "1.png"
+Sertificate.create name:"2", image: "2.png"
+Sertificate.create name:"3", image: "3.png"
+Sertificate.create name:"4", image: "4.png"
+Sertificate.create name:"5", image: "5.png"
+Sertificate.create name:"6", image: "6.png"
+Sertificate.create name:"7", image: "7.png"
+Sertificate.create name:"8", image: "8.png"
+Sertificate.create name:"9", image: "9.png"
+Sertificate.create name:"10", image: "10.png"
+Sertificate.create name:"11", image: "11.png"
 
 AboutMenu.create product_id:1, prod_category_id:2, order:1
 AboutMenu.create product_id:2, prod_category_id:2, order:2

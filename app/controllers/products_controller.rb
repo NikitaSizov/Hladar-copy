@@ -17,10 +17,12 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    render layout: false if params[:no_layout]
   end
 
   # GET /products/1/edit
   def edit
+    render layout: false if params[:no_layout]
   end
 
   # POST /products

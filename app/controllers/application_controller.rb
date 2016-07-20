@@ -10,12 +10,12 @@ class ApplicationController < ActionController::Base
   def check_auth
     redirect_to :admin_login if admin? && !authed?
   end
-  
+
   def get_nav
     if admin? then
       @nav = [
         {name: "Главная", link: "/admin"},
-        {name: "Сертификаты", link: ""},
+        {name: "Сертификаты", link: admin_sertificates_url},
         {name: "Новости", link: ""},
         {name: "Продукция", link: admin_products_url}
       ]

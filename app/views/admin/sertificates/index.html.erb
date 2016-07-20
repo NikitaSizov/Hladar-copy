@@ -1,0 +1,28 @@
+<div class="container">
+
+<div class="clearfix heading">
+  <h1 class="pull-left">Сертификаты</h1>
+  <%= link_to new_admin_sertificate_path, class: "add-btn" do %>
+  Добавить  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  <% end %>
+</div>
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+<% @admin_sertificates.each do |sertificate| %>
+<div class="col-md-4">
+    <div class="card">
+        <div class="card-image">
+            <%= image_tag "/images/#{sertificate.image}", class:"img-responsive" %>
+            <span class="card-title"><%= sertificate.name %></span>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Edit', edit_admin_sertificate_path(sertificate) %>
+          <%= link_to 'Destroy', admin_sertificate_path(sertificate), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+    </div>
+</div>
+<% end %>
+</div>
+
+</div>
