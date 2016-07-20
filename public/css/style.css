@@ -114,3 +114,15 @@ body{
 	height:100%;
 	z-index: 10000;
 }
+
+.border-black
+{
+-webkit-box-shadow: 2px 0px 0px 0px #337ab7;
+-moz-box-shadow: 2px 0px 0px 0px #337ab7;
+box-shadow: 2px 0px 0px 0px #337ab7;
+}
+
+.grey
+{
+	color:grey;
+}

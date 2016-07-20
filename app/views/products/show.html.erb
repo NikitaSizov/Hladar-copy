@@ -1,34 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+  <div class="row">
+    <div class="col-lg-5">
+      <%= image_tag @product.img, class: "product-image"%>
+      <!-- <img src="http://elmir.ua/img/500514/320/240/ognetushitel_hladar_tehsoyuz_vp-1_1kg.jpg"> -->
+    </div>
 
-<p>
-  <strong>Desc:</strong>
-  <%= @product.desc %>
-</p>
+    <div class="col-lg-6 col-lg-offset-1 align-center-prod">
+      <div class=" row white-and-shadow padding-left">
+        <h1><%= @product.name %></h1>
+      </div>
+      <div class="row white-and-shadow align-left padding-left margin-top rotate">
+        <h4><p><%= @product.desc %></p></h4>
+      </div>
+    </div>
 
-<p>
-  <strong>Img:</strong>
-  <%= @product.img %>
-</p>
+  </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <div class="row white-and-shadow padding-left margin-top">
+    <div class="col-lg-12">
+      <caption>Параметры:</caption>
+        <%= @product.props %>
+    </div>
+  </div>
+  <div class="row margin-top last-row">
+    <div class="col-lg-6">
+      <strong>На складе:</strong>
+      <%= @product.quantity %>
+    </div>
+    <div class="col-lg-6">
+      <button type="button" class="btn btn-primary">Цена: <%= @product.price %> грн.</button>
+      <% if admin? then %>
+        <%= link_to 'Edit', edit_admin_product_path(@product), class: "btn btn-warning link" %>
+      <% end %>
+    </div>
+  </div>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @product.quantity %>
-</p>
-
-<p>
-  <strong>Props:</strong>
-  <%= @product.props %>
-</p>
-<% if admin? then %>
-  <%= link_to 'Edit', edit_admin_product_path(@product) %>
-<% end %>
+</div>
