@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: Hladar_production
-  username: Hladar
+  database: <%= ENV['HLADAR_DATABASE_NAME'] %>
+  username: <%= ENV['HLADAR_DATABASE_USER'] %>
   password: <%= ENV['HLADAR_DATABASE_PASSWORD'] %>

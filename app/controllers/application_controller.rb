@@ -5,14 +5,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :get_nav
+  before_action :check_auth, except: [:login, :auth]
 
+  def check_auth
+    redirect_to :admin_login if admin? && !authed?
+  end
+  
   def get_nav
     if admin? then
       @nav = [
-        {name: "Главная", link: ""}, #admin_main_url},
+        {name: "Главная", link: "/admin"},
         {name: "Сертификаты", link: ""},
         {name: "Новости", link: ""},
-        {name: "Продукция", link: ""},#admin_products_url},
+        {name: "Продукция", link: admin_products_url}
       ]
     else
       @nav = [
