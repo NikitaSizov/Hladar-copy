@@ -85,7 +85,7 @@
 	      	<div id="carousel-generic" class="carousel slide" data-ride="carousel">
 	          <!-- Indicators -->
 	          <ol class="carousel-indicators">
-							<% 11.times do |i| %>
+							<% @sertificates.each_with_index do |e, i| %>
 	            <li data-target="#carousel-generic"
 								data-slide-to="<%= i+1 %>"<% if i==0 then %> class="active" <%end%>>
 							</li>
@@ -94,10 +94,10 @@
 
 	          <!-- Wrapper for slides -->
 	          <div class="carousel-inner">
-							<% 11.times do |i| %>
+							<% @sertificates.each_with_index do |e, i| %>
 	            <div class="item <% if i==0 then %> active <%end%>">
 	            	<div class="not-copy-my-sertificates-bitch"></div>
-	              <img src="images/<%= i+1 %>.png" alt="...">
+	              <%= image_tag "/images/#{e.image}"%>
 	              <div class="carousel-caption">
 	              </div>
 	            </div>

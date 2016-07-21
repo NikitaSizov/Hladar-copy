@@ -2,7 +2,7 @@ class Admin::AdminController < ApplicationController
   include ApplicationHelper
 
   def admin
-    render html:"admin"
+    redirect_to admin_orders_url
   end
 
   def imgupload

@@ -7,29 +7,27 @@ class Admin::SertificatesController < ApplicationController
     @sertificates = Sertificate.all
   end
 
-  # GET /admin/sertificates/1
-  # GET /admin/sertificates/1.json
-  def show
-  end
-
   # GET /admin/sertificates/new
   def new
     @sertificate = Sertificate.new
+    render layout: false if params[:no_layout]
   end
 
   # GET /admin/sertificates/1/edit
   def edit
+    render layout: false if params[:no_layout]
   end
 
   # POST /admin/sertificates
   # POST /admin/sertificates.json
   def create
-    @sertificate = Sertificate.new(admin_sertificate_params)
+    data = admin_sertificate_params
+    data[:image] =  uploadfile(params[:sertificate][:image]) if params[:sertificate][:image]
+    @sertificate = Sertificate.new(data)
 
     respond_to do |format|
-      if @admin_sertificate.save
-        format.html { redirect_to @sertificate, notice: 'Sertificate was successfully created.' }
-        format.json { render :show, status: :created, location: @sertificate }
+      if @sertificate.save
+        format.html { redirect_to admin_sertificates_url, notice: 'Sertificate was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @sertificate.errors, status: :unprocessable_entity }
@@ -40,10 +38,15 @@ class Admin::SertificatesController < ApplicationController
   # PATCH/PUT /admin/sertificates/1
   # PATCH/PUT /admin/sertificates/1.json
   def update
+    data = admin_sertificate_params
+    if params[:sertificate][:image] then
+      old_filename = Rails.root.join("public", "images", @sertificate.image)
+      File.delete(old_filename) if File.exist? old_filename
+      data[:image]  = uploadfile(params[:sertificate][:image])
+    end
     respond_to do |format|
-      if @sertificate.update(admin_sertificate_params)
-        format.html { redirect_to @sertificate, notice: 'Sertificate was successfully updated.' }
-        format.json { render :show, status: :ok, location: @sertificate }
+      if @sertificate.update(data)
+        format.html { redirect_to admin_sertificates_url, notice: 'Sertificate was successfully updated.' }
       else
         format.html { render :edit }
         format.json { render json: @sertificate.errors, status: :unprocessable_entity }
@@ -69,6 +72,6 @@ class Admin::SertificatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_sertificate_params
-      params.require(:admin_sertificate).permit(:name, :image)
+      params.require(:sertificate).permit(:name, :image)
     end
 end

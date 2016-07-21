@@ -17,7 +17,7 @@
             <span class="card-title"><%= sertificate.name %></span>
         </div>
         <div class="card-action">
-          <%= link_to 'Edit', edit_admin_sertificate_path(sertificate) %>
+          <%= link_to 'Edit', edit_admin_sertificate_path(sertificate), class:"link" %>
           <%= link_to 'Destroy', admin_sertificate_path(sertificate), method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
     </div>
@@ -26,3 +26,4 @@
 </div>
 
 </div>
+<div id="cert-modal" class="modal fade" role="dialog"></div>

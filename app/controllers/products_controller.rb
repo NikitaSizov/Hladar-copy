@@ -28,7 +28,10 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+    data = product_params
+    data[:img] =  uploadfile(params[:product][:img]) if params[:product][:img]
+    data[:prod_category] = ProdCategory.find data[:prod_category]
+    @product = Product.new(data)
 
     respond_to do |format|
       if @product.save
