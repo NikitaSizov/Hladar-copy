@@ -3,14 +3,21 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 linkHandler = (e)->
-  link = $(e.target)
+  link = $(e.target).attr("href")
   loadData(link)
   e.preventDefault()
   no
 loadData = (link)->
-  $("#product").load(link.attr("href") + "?no_layout=true")
+  $("#product").load(link + "?no_layout=true")
 
 $(document).ready( ()->
-  $(".sidebar").find("a").click( (e) -> linkHandler(e) )
-  $("a.link").click( (e) -> linkHandler(e) )
+  $(".sidebar").find("a").click( (e) -> linkHandler(e)  )
+  ###$(document).on("click", "a.link", (e) -> linkHandler(e) )
+  hash = window.location.hash.substring(1);
+  console.log("#{window.location.href.split('#')[0]}/#{hash}")
+  try
+    loadData("#{window.location.href.split('#')[0]}/#{hash}") if hash
+  catch error
+    console.log(error)
+  no###
 )

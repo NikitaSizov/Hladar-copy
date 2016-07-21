@@ -1,6 +1,5 @@
-<h1>Editing Product</h1>
+<h1>Редактирование продукта</h1>
 
 <%= render 'form' %>
-<%= link_to 'Destroy', admin_product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %> | 
-<%= link_to 'Show', admin_product_path(@product) %> |
-<%= link_to 'Back', admin_products_path %>
+<%= link_to 'Удалить', admin_product_path(@product), method: :delete, data: { confirm: 'Вы уверены?' },  class: "btn btn-danger link" %>
+<%= link_to 'Назад', admin_product_path(@product),  class: "btn link" %>

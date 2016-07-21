@@ -25,6 +25,6 @@
 			</div><!-- /.navbar-collapse -->
 		</nav>
 		<main>
-		<%= yield %>
+		<%= content_for?(:content) ? yield(:content) : yield %>
 		</main>
 	</body>
