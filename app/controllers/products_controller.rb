@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @order = Order.new
     render layout: false if params[:no_layout]
   end
 
@@ -51,9 +52,10 @@ class ProductsController < ApplicationController
       logger.error filename
       data[:img] = filename
     end
+    data[:prod_category] = ProdCategory.find data[:prod_category]
     respond_to do |format|
       if @product.update(data)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to admin_product_path(@product), notice: 'Данные продукта изменены.' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -82,6 +84,6 @@ class ProductsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :desc, :img, :price, :quantity, :props)
+      params.require(:product).permit(:name, :desc, :img, :price, :quantity, :props, :prod_category)
     end
 end

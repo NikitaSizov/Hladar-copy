@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     root 'admin#admin'
+    get 'orders/', to: 'orders#index'
+    post 'orders/', to: 'orders#create'
     #resources :products, controller: 'products'
     get '/login', to: 'session#login', as: :login
     post '/auth', to: 'session#auth', as: :auth
