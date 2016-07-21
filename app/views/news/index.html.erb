@@ -2,7 +2,14 @@
 	<div class="row card-back">
 		<div class="container">
 		<div class="row">
-			<div class="col-lg-12"><h1>Новости</h1></div>
+			<div class="col-lg-12 clearfix">
+				<h1>Новости</h1>
+				<%= link_to new_admin_news_path, class: "pull-right link" do %>
+					<% if admin? then%>
+						Добавить  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					<% end %>
+				<% end %>
+			</div>
 			<% @news.each do |item| %>
 			<div class="col-lg-4">
 				<div class="thumbnail">
@@ -10,13 +17,17 @@
 							<div class="caption">
 								<h3><%= item.name %></h3>
 								<p><%= truncate(item.desc, length: 150) %></p>
+								<%if admin? then%>
+									<%= link_to 'Edit', edit_admin_news_path(item), class:"btn btn-warning link" %>
+								<% else %>
 								<p>
 									<a href="#" id="<%= item.id %>"
-										class="btn btn-primary modal-trigger"
+										class="btn btn-primary modal-trigger link"
 										role="button" data-toggle="modal" data-target="#ModalWindow">
 											Подробнее
 									</a>
 								</p>
+								<% end %>
 							</div>
 					</div>
 			</div>
@@ -25,4 +36,8 @@
 		</div>
 	</div>
 </section>
-<%= render 'layouts/menu_modal'%>
+<% if admin? %>
+	<div id="news-modal" class="modal fade" role="dialog"></div>
+<% else %>
+	<%= render 'news/menu_modal' %>
+<% end%>

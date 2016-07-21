@@ -1,17 +1,40 @@
-<%= form_for(@news) do |f| %>
-  <% if @news.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:</h2>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <%= form_for([:admin, @novelty], multipart: true, authenticity_token: true) do |f| %>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Редактирование новостей</h4>
+      </div>
+      <div class="modal-body">
+        <% if @novelty.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@novelty.errors.count, "error") %> prohibited from being saved:</h2>
 
-      <ul>
-      <% @news.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+            <ul>
+            <% @novelty.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :name, "Название: " %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :img, "Новая картинка:" %><br>
+          <%= f.file_field :img, class: "form-control"  %>
+        </div>
+        <div class="form-group">
+          <%= f.label :desc, "Описание: " %>
+          <%= f.text_area :desc, class: "form-control" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Отправить", class: "btn btn-default" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+</div>

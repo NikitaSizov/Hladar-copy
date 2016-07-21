@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
       @nav = [
         #{name: "Главная", link: "/admin"},
         {name: "Сертификаты", link: admin_sertificates_url},
-        {name: "Новости", link: admin_news_url},
+        {name: "Новости", link: admin_news_index_url},
         {name: "Продукция", link: admin_products_url},
         {name: "Заказы", link: admin_orders_url}
       ]
