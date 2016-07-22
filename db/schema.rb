@@ -45,9 +45,12 @@ ActiveRecord::Schema.define(version: 20160721161023) do
   end
 
   create_table "prod_categories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",         limit: 255
+    t.text     "description",  limit: 65535
+    t.boolean  "show_on_main"
+    t.string   "image",        limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "products", force: :cascade do |t|

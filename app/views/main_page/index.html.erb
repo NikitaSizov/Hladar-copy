@@ -21,54 +21,24 @@
 <section id="main-prod">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-4 text-center">
-				<p>
-					<div class="my-ico">
-						<img src="images/black.png">
-					</div>
-				</p>
-				<p>
-					<h2>Порошковые огентушители</h2>
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
-				</p>
-				<p>
-					<button type="button" class="btn btn-default"><h4>Подробнее</h4></button>
-				</p>
-			</div>
-			<div class="col-lg-4 text-center">
-				<p>
-					<div class="my-ico">
-						<img src="images/tool.png">
-					</div>
-				</p>
-				<p>
-					<h2>Углекислотные огнтушители</h2>
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
-				</p>
-				<p>
-					<button type="button" class="btn btn-default"><h4>Подробнее</h4></button>
-				</p>
-			</div>
-			<div class="col-lg-4 text-center">
-				<p>
-					<div class="my-ico">
-						<img src="images/fire.png">
-					</div>
-				</p>
-				<p>
-					<h2>Пожарное<br>оборудование</h2>
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
-				</p>
-				<p>
-					<button type="button" class="btn btn-default"><h4>Подробнее</h4></button>
-				</p>
-			</div>
+			<% @categories.each do |c| %>
+				<div class="col-lg-4 text-center">
+					<p>
+						<div class="my-ico">
+							<%= image_tag "/images/#{c.image}"%>
+						</div>
+					</p>
+					<p>
+						<h2><%= c.name %></h2>
+					</p>
+					<p>
+						<%= c.description %>
+					</p>
+					<p>
+						<%= link_to "Подробнее",products_url, class:"btn btn-default btn-lg"%>
+					</p>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </section>

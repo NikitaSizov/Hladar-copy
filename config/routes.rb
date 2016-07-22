@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :news
+  resources :news, only: [:show, :index]
   root 'main_page#index'
   resources :products, only: [:show, :index]
   get '/news', to: "news#index"
@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     root 'admin#admin'
     get 'orders/', to: 'orders#index'
     post 'orders/', to: 'orders#create'
-    #resources :products, controller: 'products'
+    patch '/categories/:id', to: 'product_categories#update', as: :category
+    get '/categories/', to: 'product_categories#index'
+    delete '/categories/:id', to: 'product_categories#destroy'
     get '/login', to: 'session#login', as: :login
     post '/auth', to: 'session#auth', as: :auth
     resources :sertificates

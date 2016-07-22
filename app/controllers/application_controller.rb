@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
         {name: "Сертификаты", link: admin_sertificates_url},
         {name: "Новости", link: admin_news_index_url},
         {name: "Продукция", link: admin_products_url},
+        {name: "Категории", link: admin_categories_url},
         {name: "Заказы", link: admin_orders_url}
       ]
     else

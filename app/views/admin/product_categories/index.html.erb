@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Каатегории продуктов</h2>
+  <div class="row heading">
+    <div class="col-md-3">Название</div>
+    <div class="col-md-4">Описание</div>
+    <div class="col-md-2">Картинка</div>
+    <div class="col-md-1">Показывать на главной</div>
+  </div>
+  <% @categories.each do |category| %>
+    <%= form_for [:admin, category], method: :patch, url: admin_category_path(category),authenticity_token: true, remote: true do |f| %>
+      <div class="row line">
+        <div class="col-md-3"><%= f.text_field :name, class:"form-control" %></div>
+        <div class="col-md-4"><%= f.text_area :description, class: "form-control"%></div>
+        <div class="col-md-2"><%= f.file_field :image, class: "form-control"%></div>
+        <div class="col-md-1"><%= f.check_box :show_on_main, class: "form-control"%></div>
+        <div class="col-md-2">
+          <%= f.submit "Update", class: "btn btn-warning" %>
+          <%= link_to 'Destroy', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-4">
+      <button class="btn btn-info" >Добавить</button>
+    </div>
+  </div>
+</div>
