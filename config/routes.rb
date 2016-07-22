@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     post 'orders/', to: 'orders#create'
     patch '/categories/:id', to: 'product_categories#update', as: :category
     get '/categories/', to: 'product_categories#index'
+    get '/categories/new', to: 'product_categories#new'
+    post '/categories/', to: 'product_categories#create'
     delete '/categories/:id', to: 'product_categories#destroy'
     get '/login', to: 'session#login', as: :login
     post '/auth', to: 'session#auth', as: :auth

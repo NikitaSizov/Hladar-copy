@@ -1,5 +1,10 @@
 <div class="container">
   <h2>Каатегории продуктов</h2>
+  <% if flash[:notice] then%>
+    <div class="alert alert-success" role="alert">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
   <div class="row heading">
     <div class="col-md-3">Название</div>
     <div class="col-md-4">Описание</div>
@@ -20,9 +25,10 @@
       </div>
     <% end %>
   <% end %>
+  <div class="new-container"></div>
   <div class="row">
     <div class="col-md-4">
-      <button class="btn btn-info" >Добавить</button>
+      <button class="btn btn-info" id="btn-new">Добавить</button>
     </div>
   </div>
 </div>
