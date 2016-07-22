@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 ProdCategory.create(id:0, name:"")
-ProdCategory.create(name: "Огнетушители порошковые")
-ProdCategory.create(name: "Огнетушители углекислотные")
-ProdCategory.create(name: "Пожарный инвентарь")
+ProdCategory.create(name: "Огнетушители порошковые", image: "black.png", show_on_main: true)
+ProdCategory.create(name: "Огнетушители углекислотные", image: "tool.png", show_on_main: true)
+ProdCategory.create(name: "Пожарный инвентарь", image: "fire.png", show_on_main: true)
 
 cat = ProdCategory.all
 
