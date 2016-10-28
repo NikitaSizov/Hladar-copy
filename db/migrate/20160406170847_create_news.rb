@@ -1,4 +1,8 @@
 class CreateNews < ActiveRecord::Migration
+
+  def up
+    News.create_translation_table! name: :string, desc: :text
+  end
   def change
     create_table :news do |t|
       t.string :name
@@ -7,5 +11,8 @@ class CreateNews < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+  end
+  def down
+    News.drop_translation_table!    
   end
 end

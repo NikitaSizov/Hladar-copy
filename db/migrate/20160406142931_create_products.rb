@@ -1,4 +1,9 @@
 class CreateProducts < ActiveRecord::Migration
+
+  def up
+    Product.create_translation_table! name: :string, desc: :text, props: :text
+  end
+
   def change
     create_table :products do |t|
       t.string :name
@@ -11,5 +16,9 @@ class CreateProducts < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+  end
+
+  def down
+    Product.drop_translation_table!
   end
 end

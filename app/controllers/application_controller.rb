@@ -23,10 +23,10 @@ class ApplicationController < ActionController::Base
       ]
     else
       @nav = [
-        {name: "Главная", link: root_url},
-        {name: "Продукция", link: products_url},
-        {name: "О Нас", link: "/#what-we-make"},
-        {name: "Контакты", link: "/#contacts"},
+        {name: t('nav.main'), link: root_url},
+        {name: t('nav.production'), link: products_url},
+        {name: t('nav.about'), link: "/#what-we-make"},
+        {name: t('nav.contacts'), link: "/#contacts"},
       ]
     end
   end
