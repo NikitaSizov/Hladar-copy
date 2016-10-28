@@ -1,0 +1,12 @@
+upstream hladar{
+  server unix:/path/to/app/tmp/sockets/hladar.sock fail_timeout=0;
+}
+server{
+  listen 4567 default;
+  root /path/to/app/public;
+  try_files $uri @hladar;
+  location @hladar{
+    proxy_pass http://hladar;
+  }
+  error_page 500 502 503 504 500.html;
+}
