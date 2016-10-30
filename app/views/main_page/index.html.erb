@@ -2,8 +2,8 @@
 	<div class="image-container">
 		<div class="container">
 			<div class="wrapper">
-				<h1>Огнетушители и пожарное оборудование</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. </p>
+				<h1><%= t ".header_main"%></h1>
+				<p><%= t ".header_lower"%> </p>
 			</div>
 		</div>
 	</div>
@@ -35,7 +35,7 @@
 						<%= c.description %>
 					</p>
 					<p>
-						<%= link_to "Подробнее",products_url, class:"btn btn-default btn-lg"%>
+						<%= link_to t(".more"),products_url, class:"btn btn-default btn-lg"%>
 					</p>
 				</div>
 			<% end %>
@@ -45,7 +45,7 @@
 
 <section id="sertificates">
 	<div class="row back-sertificates text-center">
-		<h1 class="padding-sert">Наши сертификаты</h1>
+		<h1 class="padding-sert"><%= t ".sertificates"%></h1>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
@@ -92,22 +92,20 @@
 	<div class="container">
 		<div class="row back-what-we-make">
 			<div class="col-lg-8">
-				<h1>Про нас</h1>
+				<h1><%= t ".about"%></h1>
 				<p>
 					<br>
 					<b>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+						<%= t ".about_first"%>
 					</b>
 				</p>
 				<p>
 					<br>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex magna, consectetur non mauris a, faucibus pharetra nisi. Lorem ipsum dolor sit amet
+					<%= t ".about_second"%>
 				</p>
 			</div>
 			<div class="col-lg-4 production">
-				<h1>Наша продукция</h1>
+				<h1><%= t ".production"%></h1>
 				<ul>
 					<% @aboutMenu.each do |category| %>
 						<% if category[0].prod_category_id > 1 then%>
@@ -134,7 +132,7 @@
 </section>
 <%= render template: "news/index" %>
 <div class="row grey-back" id="contacts">
-	<h1>Контакты</h1>
+	<h1><%= t ".contacts"%></h1>
 	<div class="container">
 
 
@@ -143,13 +141,13 @@
 		</div>
 
 		<div class="col-lg-4 col-lg-offset-1 back-so-grey align-center">
-			<li><b><h3>Отдел продаж:</h3></b>
+			<li><b><h3><%= t ".sales_department"%></h3></b>
 				<ul>
 					<li><h4><a href="#"><p>Скрипник Виталий Николаевич,</p><span class="glyphicon glyphicon-earphone" style="color:#006df0;"></span> +38(061)289-30-35</a></h4></li>
 					<li><h4><a href="#"><p>Петрушенко Андрей Петрович</p><span class="glyphicon glyphicon-earphone" style="color:#006df0;"></span> +38(061)289-30-36</a></h4></li>
 				</ul>
 			</li>
-			<li><b><h3>Бухгалтерия:</h3></b>
+			<li><b><h3><%= t ".accounting"%>:</h3></b>
 				<ul>
 					<li><h4><a href="#"></p><span class="glyphicon glyphicon-earphone" style="color:#006df0;"></span> +38(061)289-30-35</a></h4></li>
 				</ul>
@@ -160,12 +158,12 @@
 				</ul>
 			</li>
 			<div class="button-align">
-				<button type="button" class="btn btn-primary">Обратная связь</button>
+				<button type="button" class="btn btn-primary"><%= t ".feedback"%></button>
 			</div>
 		</div>
 
 	</div>
 </div>
 <div class="row grey-back">
-	<h5>© 2016, Хлодар-Техсоюз. Все права защищены.</h5>
+	<h5><%= t "footer" %></h5>
 </div>

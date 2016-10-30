@@ -1,7 +1,6 @@
 class CreateProducts < ActiveRecord::Migration
 
   def up
-    Product.create_translation_table! name: :string, desc: :text, props: :text
   end
 
   def change
@@ -16,6 +15,7 @@ class CreateProducts < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    Product.create_translation_table! name: :string, desc: :text, props: :text
   end
 
   def down

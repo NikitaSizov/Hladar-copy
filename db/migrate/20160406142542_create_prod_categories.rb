@@ -1,6 +1,5 @@
 class CreateProdCategories < ActiveRecord::Migration
   def up
-    ProdCategory.create_translation_table! name: :string, description: :text
   end
   def change
     create_table :prod_categories do |t|
@@ -10,6 +9,7 @@ class CreateProdCategories < ActiveRecord::Migration
       t.string :image
       t.timestamps null: false
     end
+    ProdCategory.create_translation_table! name: :string, description: :text
   end
   def down
     ProdCategory.drop_translation_table!

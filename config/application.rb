@@ -28,6 +28,7 @@ module Hladar
       end if File.exists?(env_file)
     end
     config.active_record.raise_in_transactional_callbacks = true
-
+    config.i18n.fallbacks = true
+    config.i18n.default_locale = :ru
   end
 end
