@@ -18,10 +18,25 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   nav:
-    main: "Home"
-    production: "Products"
-    about: "About"
+    main: "Main"
+    production: "Production"
+    about: "About Us"
     contacts: "Contacts"
+  main_page:
+    index:
+      header_main: "Fire extinguishers and fire-fighting equipment"
+      header_lower: "The quality which guarantees safety"
+      more: "Ьщку"
+      sertificates: "Our sertificates"
+      about: "About Us"
+      about_first: "The main area of our activity is a production of basic fire-fighting equipment. In particular, manufacturing of portable fire extinguishers. The company Khladar-Tekhsoiuz specializes in production of powder-type rechargeable fire extinguishers and carbon dioxide fire extinguishers. Huge experience in this production, professional competence of our employees allows us to provide high quality products."
+      about_second: "You can buy fire extinguishers, constituent parts, fixtures to fire extinguishers etc., fire-extinguishing equipment and implements"
+      production: "Our production"
+      news: "News"
+      contacts: "Contacts"
+      sales_department: "Sales department"
+      accounting: "Accounting"
+      feedback: "Feedback"
+  footer: "© 2016, Hladar-techunion. All rights reserved."
