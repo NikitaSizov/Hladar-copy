@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   before_action :get_nav
   before_action :check_auth, except: [:login, :auth]
+  before_action :set_locale
 
   def check_auth
     redirect_to :admin_login if admin? && !authed?
@@ -40,5 +41,9 @@ class ApplicationController < ActionController::Base
       file.write(uploaded_io.read)
     end
     path.to_s.gsub(Rails.root.join('public', 'images').to_s,"")
+  end
+  def set_locale
+    session[:locale] = params[:locale] if params[:locale].present?
+    I18n.locale = session[:locale] if session[:locale].present?
   end
 end
