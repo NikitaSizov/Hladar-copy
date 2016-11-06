@@ -16,16 +16,16 @@ class ApplicationController < ActionController::Base
     if admin? then
       @nav = [
         #{name: "Главная", link: "/admin"},
-        {name: "Сертификаты", link: admin_sertificates_url},
-        {name: "Новости", link: admin_news_index_url},
-        {name: "Продукция", link: admin_products_url},
-        {name: "Категории", link: admin_categories_url},
-        {name: "Заказы", link: admin_orders_url}
+        {name: "Сертификаты", link: admin_sertificates_path},
+        {name: "Новости", link: admin_news_index_path},
+        {name: "Продукция", link: admin_products_path},
+        {name: "Категории", link: admin_categories_path},
+        {name: "Заказы", link: admin_orders_path}
       ]
     else
       @nav = [
-        {name: t('nav.main'), link: root_url},
-        {name: t('nav.production'), link: products_url},
+        {name: t('nav.main'), link: root_path},
+        {name: t('nav.production'), link: products_path},
         {name: t('nav.about'), link: "/#what-we-make"},
         {name: t('nav.contacts'), link: "/#contacts"},
       ]
