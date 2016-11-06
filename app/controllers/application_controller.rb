@@ -45,5 +45,6 @@ class ApplicationController < ActionController::Base
   def set_locale
     session[:locale] = params[:locale] if params[:locale].present?
     I18n.locale = session[:locale] if session[:locale].present?
+    Rails.logger.debug I18n.locale
   end
 end
