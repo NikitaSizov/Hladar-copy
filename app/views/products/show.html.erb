@@ -25,7 +25,7 @@
 <div class="row white-and-shadow padding-left margin-top">
   <div class="col-lg-12">
     <caption>Параметры:</caption>
-      <%= @product.props.gsub(/\n/, '<br/>') %>
+      <%= @product.props.gsub(/\n/, '<br/>').html_safe %>
   </div>
 </div>
 <div class="row margin-top last-row">
