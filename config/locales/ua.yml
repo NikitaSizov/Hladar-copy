@@ -19,4 +19,5 @@ ua:
       sales_department: "Отдел продаж"
       accounting: "Бухгалтерия"
       feedback: "Обратная связь"
+      purchase_department: "Отдел снабжения"
   footer: "© 2016, Хлодар-Техсоюз. Все права защищены."
