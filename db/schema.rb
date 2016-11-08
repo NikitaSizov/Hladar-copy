@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721161023) do
+ActiveRecord::Schema.define(version: 20161108152723) do
 
   create_table "about_menus", force: :cascade do |t|
     t.integer  "product_id",       limit: 4
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 20160721161023) do
 
   add_index "news_translations", ["locale"], name: "index_news_translations_on_locale", using: :btree
   add_index "news_translations", ["news_id"], name: "index_news_translations_on_news_id", using: :btree
+
+  create_table "offers", force: :cascade do |t|
+    t.integer  "product_id",      limit: 4
+    t.integer  "show_product_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string   "name",       limit: 255
