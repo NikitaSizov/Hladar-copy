@@ -3,4 +3,10 @@ class Product < ActiveRecord::Base
 	has_many :offers
 	has_many :offer_items, through: :offers, source: :show_product
 	translates :name, :desc, :props
+
+	def self.get_params_for_select
+		Product.all.map do |product|
+			[product.name, product.id]
+		end
+	end
 end

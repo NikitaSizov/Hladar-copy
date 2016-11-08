@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @offers = @product.offers
     render layout: false if params[:no_layout]
   end
 

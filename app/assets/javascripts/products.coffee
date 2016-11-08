@@ -20,4 +20,7 @@ $(document).ready( ()->
   catch error
     console.log(error)
   no###
+  $(".offer").on 'ajax:success', (data, status, xhr)->
+    alert(xhr)
+    console.log data
 )

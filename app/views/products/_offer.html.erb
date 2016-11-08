@@ -1,0 +1,7 @@
+<div class="col-lg-4">
+  <%= form_tag admin_product_offer_path(offer.id, offer.product), method: :put, remote: true, class:"offer" do %>
+    <%= select_tag [:name, :show_product_id], options_for_select(Product.get_params_for_select) %>
+    <%= submit_tag "Сохранить"%>
+  <% end %>
+</div>
+<% Rails.logger.debug "offer_form" %>

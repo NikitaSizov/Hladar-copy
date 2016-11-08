@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/smth', to: 'main_page#smth'
   scope :as => "admin" do
     resources :products, path: '/admin/products' do
-      resources :offers, only: [:create, :update]
+      resources :offers, controller: "admin/offers", only: [:create, :update]
     end
     resources :news, path: '/admin/news'
   end

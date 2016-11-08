@@ -64,4 +64,16 @@
     </div>
   </div>
 <% end %>
+<div class="row padding-left margin-top">
+  <h3 class="col-lg-3 col-sm-10">Предложеные товары</h3>
+  <% if admin? %>
+    <button id="new-offer" class="btn btn-success col-lg-1 col-sm-1">Добавить</button>
+  <% end %>
+</div>
+
+<div class="row padding-left margin-top">
+  <% @offers.each do |offer| %>
+    <%= render partial: "offer", locals: {offer: offer} %>
+  <% end %>
+</div>
 <br>
