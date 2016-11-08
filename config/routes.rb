@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get '/news/:id', to: 'news#show'
   get '/smth', to: 'main_page#smth'
   scope :as => "admin" do
-    resources :products, path: '/admin/products'
+    resources :products, path: '/admin/products' do
+      resources :offers, only: [:create, :update]
+    end
     resources :news, path: '/admin/news'
   end
   namespace :admin do
