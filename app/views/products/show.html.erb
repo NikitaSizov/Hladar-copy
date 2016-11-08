@@ -30,7 +30,7 @@
 
 <div class="row white-and-shadow padding-left margin-top">
   <div class="col-lg-12">
-    
+
   </div>
 </div>
 <div class="row margin-top last-row">
@@ -48,6 +48,16 @@
       </button>
     <% end %>
   </div>
+</div>
+<h3>Предложеные товары</h3>
+<div class="row padding-left margin-top">
+  <% @offers.each do |offer| %>
+    <div class="col-lg-4">
+      <%= image_tag offer.show_product.img %>
+      <h4><%= offer.show_product.name %></h4>
+      <%= link_to "Подробнее", offer.show_product %>
+    </div>
+  <% end %>
 </div>
 <div id="feedback-modal" class="modal fade" role="dialog">
   <div class="modal-dialog">

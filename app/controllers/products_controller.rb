@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @order = Order.new
+    @offers = @product.offers
     render layout: false if params[:no_layout]
   end
 
