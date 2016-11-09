@@ -20,7 +20,10 @@ $(document).ready( ()->
   catch error
     console.log(error)
   no###
-  $(".offer").on 'ajax:success', (data, status, xhr)->
-    alert(xhr)
-    console.log data
+  $(".edit_offer, .new_offer").on 'ajax:success', (xhr, data, status)->
+    alert(data)
+  $('#new-offer').on 'ajax:success', (xhr, data, status) ->
+    $('#offers-container').append($(data))
+  $('.delete-offer').on 'ajax:success', (xhr, data, status) ->
+    $(xhr.currentTarget).closest('.offer-wrapper').remove() 
 )

@@ -1,7 +1,10 @@
-<div class="col-lg-4">
-  <%= form_tag admin_product_offer_path(offer.id, offer.product), method: :put, remote: true, class:"offer" do %>
-    <%= select_tag [:name, :show_product_id], options_for_select(Product.get_params_for_select) %>
-    <%= submit_tag "Сохранить"%>
+<div class="col-lg-4 offer-wrapper">
+  <%= form_for offer, url: @url || admin_product_offer_path(offer.product, offer.id, format: :json), remote: true, class:"offer" do %>
+    <%= select_tag :show_product_id, options_for_select(Product.get_params_for_select, selected: offer.show_product_id), class: 'form-control' %>
+    <br>
+    <div class="btn-group">
+      <%= submit_tag "Сохранить", class: "btn btn-warning" %>
+      <%= link_to("Удалить", admin_product_offer_path(offer.product, offer.id, format: :json), method: 'delete', remote: true, class: 'btn btn-danger delete-offer') unless @url %>
+    </div>
   <% end %>
 </div>
-<% Rails.logger.debug "offer_form" %>
