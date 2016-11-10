@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108152723) do
+ActiveRecord::Schema.define(version: 20161110141052) do
 
   create_table "about_menus", force: :cascade do |t|
     t.integer  "product_id",       limit: 4
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20161108152723) do
     t.string   "name",       limit: 255
     t.text     "desc",       limit: 65535
     t.text     "props",      limit: 65535
+    t.text     "red_text",   limit: 65535
   end
 
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
@@ -107,6 +108,7 @@ ActiveRecord::Schema.define(version: 20161108152723) do
     t.integer  "prod_category_id", limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.text     "red_text",         limit: 65535
   end
 
   create_table "sertificates", force: :cascade do |t|

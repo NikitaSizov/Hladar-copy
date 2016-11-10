@@ -23,6 +23,11 @@
         <caption>Параметры:</caption>
           <%= @product.props.html_safe %>
       </div>
+      <% unless @product.red_text.to_s.empty? %>
+        <div class="col-lg-12 red-bordered">
+            <%= @product.red_text.html_safe %>
+        </div>
+      <% end %>
     </div>
   </div>
 
