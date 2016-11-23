@@ -50,7 +50,7 @@
         <%= f.label :prod_category, "Категория: " %><br>
         <%= f.select :prod_category, class: "form-control" do |e| %>
           <% @categories.each do |c| %>
-            <option value="<%= c.id %>" <%="selected" if c.id == @product.prod_category.id%>><%= c.name || "Нет" %></option>
+            <option value="<%= c.id %>" <%="selected" if @product.prod_category && c.id == @product.prod_category.id%>><%= c.name || "Нет" %></option>
           <% end %>
         <% end %>
       </div>
@@ -70,7 +70,7 @@
 <% end %>
 <div class="row padding-left margin-top">
   <h3 class="col-lg-3 col-sm-10">Предложеные товары</h3>
-  <% if admin? %>
+  <% if admin? && @product.id %>
     <%= link_to "Добавить", admin_product_offer_form_path(@product), remote: true, id: "new-offer", class: "btn btn-success col-lg-1 col-sm-1"%>
   <% end %>
 </div>
@@ -78,6 +78,6 @@
 <div class="row padding-left margin-top" id="offers-container">
   <% @offers.each do |offer| %>
     <%= render partial: "offer", locals: {offer: offer} %>
-  <% end %>
+  <% end if @offers%>
 </div>
 <br>
