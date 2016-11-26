@@ -36,6 +36,13 @@ Slider = function(image, links, cb_cont){
 	}
 }
 $(document).ready(function(){
+	$(window).load(function() {
+    setTimeout(function() {
+      $('#preloader').fadeOut('slow', function() {});
+    }, 1000);
+
+  });
+
 	links = [];
 	checkboxes_container = $(".checkboxes");
 	$("#main-photo").find(".images").find("a").each(function(index, element){
