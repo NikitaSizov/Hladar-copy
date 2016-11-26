@@ -48,14 +48,11 @@
 		<h1 class="padding-sert"><%= t ".sertificates"%></h1>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3">
-
-				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-12">
 	      	<div id="carousel-generic" class="carousel slide" data-ride="carousel">
 	          <!-- Indicators -->
 	          <ol class="carousel-indicators">
-							<% @sertificates.each_with_index do |e, i| %>
+							<% @sertificates.each_slice(3).with_index do |e, i| %>
 	            <li data-target="#carousel-generic"
 								data-slide-to="<%= i+1 %>"<% if i==0 then %> class="active" <%end%>>
 							</li>
@@ -64,13 +61,17 @@
 
 	          <!-- Wrapper for slides -->
 	          <div class="carousel-inner">
-							<% @sertificates.each_with_index do |e, i| %>
-	            <div class="item <% if i==0 then %> active <%end%>">
-	            	<div class="not-copy-my-sertificates-bitch"></div>
-	              <%= image_tag "/images/#{e.image}"%>
-	              <div class="carousel-caption">
-	              </div>
-	            </div>
+							<% @sertificates.each_slice(3).with_index do |slice, index| %>
+								<div class="item row <% if index==0 then %> active <%end%>">
+									<% slice.each do |e| %>
+										<div class='col-lg-4'>
+				            	<div class="not-copy-my-sertificates-bitch"></div>
+				              <%= image_tag "/images/#{e.image}", class: "block full-width"%>
+				              <div class="carousel-caption">
+											</div>
+			              </div>
+									<% end %>
+		            </div>
 							<% end %>
 	          </div>
 
